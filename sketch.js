@@ -9,7 +9,6 @@
 
 // "keypoints" you can use the keypoints array to show all body parts by looping over it.
 
-let bodyPose;
 let video;
 
 function setup() {
@@ -19,7 +18,7 @@ function setup() {
   video.hide();
 
   // start bodyPose
-  startBodyPose(video, bodyPose);
+  startBodyPose(video);
 }
 
 function draw() {

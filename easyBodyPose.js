@@ -49,7 +49,7 @@ let person = {
   right_ankle: initialValues,
 };
 
-function startBodyPose(videoOrImage, bodyPose) {
+function startBodyPose(videoOrImage) {
   input = videoOrImage;
   if (!input) {
     bodyPoseVideo = createCapture(VIDEO);
@@ -111,6 +111,7 @@ Instructions and more information:
 }
 
 // define all the variables we need
+let bodyPose;
 let poses = [];
 let imageInput = false;
 let input;
