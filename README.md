@@ -76,3 +76,11 @@ We could have noseX, noseY rather than person.nose.x, person.nose.y - would that
 _❓ Why do we only track one person?_
 
 Only allowing one person means we can really simplify the code - but you still have access to the poses variable allowing the usage of multi-person tracking completely possible. When you're getting started with this kind of code do you really care about doing that - and once you understand about loops and conditionals then perhaps use the original [ML5js code](https://docs.ml5js.org/#/reference/bodypose)!
+
+_❓ Why is the canvas in the centre of the screen?_
+
+We wanted to add a tiny bit of styling - it looks horrible when the canvas is stuck in the top corner, so a tiny bit of CSS has been added - check out the `style.css` file where there's a comment about this.
+
+Big improvements could be made, such as scaling the camera, detecting if its landscape or portrait and changing it accordingly, using the front or back camera (this can be done by changing the camera from `user` to `environment`).
+
+But this over complicates things for now - if you interested discuss in the [Discussions](https://github.com/amcc/easybodypose/discussions) area!
