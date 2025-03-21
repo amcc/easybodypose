@@ -1,5 +1,10 @@
 // how to use this
-// run startPoseNet() in your setup
+// we have preloaded the bodyPose model
+// run startBodyPose() in your setup
+
+function preload() {
+  bodyPose = ml5.bodyPose("MoveNet");
+}
 
 // define initial values with x and y off the screen
 let initialValues = {
@@ -47,26 +52,20 @@ let person = {
 function startBodyPose(videoOrImage, bodyPose) {
   input = videoOrImage;
   if (!input) {
-    poseNetVideo = createCapture(VIDEO);
-    poseNetVideo.size(width, height);
-    poseNetVideo.hide();
-    input = poseNetVideo;
+    bodyPoseVideo = createCapture(VIDEO);
+    bodyPoseVideo.size(width, height);
+    bodyPoseVideo.hide();
+    input = bodyPoseVideo;
     imageInput = false;
   } else if (!input.elt || input.elt.nodeName !== "VIDEO") {
     imageInput = true;
   }
 
-  //   poseNet = ml5.poseNet(input, "single", modelReady);
-  //   // Start detecting poses in the webcam video
+  // Start detecting poses in the webcam video
   bodyPose.detectStart(input, gotPoses);
 
-  // every time new poses are detected store them in 'poses'
-  // poseNet.on("pose", function (results) {
-  //   poses = results;
-  //   if (poses.length > 0) {
-  //     addProps(poses[0].pose, "pose");
-  //   }
-  // });
+  // log some help to the console
+  logMessage();
 }
 
 // Callback function for when bodyPose outputs data
@@ -99,14 +98,20 @@ function addProps(obj) {
   }
 }
 
-function modelReady() {
-  console.log("Easy PoseNet is ready");
-  if (imageInput) poseNet.singlePose(input);
+function logMessage() {
+  console.log(`
+🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
+EasyBodyPose allows you to use ML5JS BodyPose
+easily without extra code.
+
+Instructions and more information:
+↳ https://github.com/amcc/easybodypose
+🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
+`);
 }
 
 // define all the variables we need
-let poseNet;
 let poses = [];
 let imageInput = false;
 let input;
-let poseNetVideo;
+let bodyPoseVideo;

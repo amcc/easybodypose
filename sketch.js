@@ -12,17 +12,13 @@
 let bodyPose;
 let video;
 
-function preload() {
-  bodyPose = ml5.bodyPose("MoveNet");
-}
-
 function setup() {
   createCanvas(640, 480);
   video = createCapture(VIDEO);
   video.size(width, height);
   video.hide();
 
-  // start
+  // start bodyPose
   startBodyPose(video, bodyPose);
 }
 
