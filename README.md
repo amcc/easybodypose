@@ -1,6 +1,8 @@
 # 🚀 ML5JS easyBodyPose
 
-[Play with easyBodyPose here](https://lab.amcc.io/easybodypose)
+- [Use this code in the p5js editor](https://editor.p5js.org/amcc/sketches/ouGbq7DOV)
+- [See the demo](https://lab.amcc.io/easybodypose)
+
 easyBodyPose allows you to easily use [ML5JS bodyPose](https://docs.ml5js.org/#/reference/bodypose) without worrying about loops and if statements. You can access all the body parts of a person
 by typing `person.nose.x` for example to get the x position of your nose.
 
