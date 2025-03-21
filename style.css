@@ -1,6 +1,13 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
+
+  /* put the canvas in the center of the page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 canvas {
   display: block;
