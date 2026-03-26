@@ -51,6 +51,14 @@ confidence
 Box has `height`, `width`, `xMax`, `xMin`, `yMax` and `yMin`
 Confience is a score between `0` and `1`
 
+This only shows the nose if the model is confident there is a human
+
+<pre>
+ if (person.confidence > 0) {
+    circle(person.nose.x, person.nose.y, 50);
+ }
+</pre>
+
 Other objects:
 
 <pre>

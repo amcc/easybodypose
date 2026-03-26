@@ -33,28 +33,18 @@ function draw() {
 
   // track the nose
   circle(person.nose.x, person.nose.y, 50);
-
-  // we can use the person.confidence value to only show the part if a person is detected
-  // fill(0, 255, 255);
-  // if (person.confidence > 0) {
-  //   circle(person.nose.x, person.nose.y, 50);
-  // }
-
-  // show all the keypoints - useful for seeing what is available:
-  // fill(255, 0, 0);
-  // for (let i = 0; i < keypoints.length; i++) {
-  //   circle(keypoints[i].x, keypoints[i].y, 10);
-  // }
 }
 
 // these are the available variables...
-// console.log(person) will show you everything in the console.
-// for instance:
-// person.nose.x
 
 // list of all variables
+// person <- object containing the person
+
+// within the person object we have:
 // box
 // confidence
+
+// the body parts within the person object:
 // left_ankle
 // left_ear
 // left_elbow
@@ -72,3 +62,8 @@ function draw() {
 // right_knee
 // right_shoulder
 // right_wrist
+
+// for instance:
+// person.nose.x
+
+// poses is the root bodyPose object
