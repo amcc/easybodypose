@@ -31,22 +31,20 @@ function draw() {
 
   // examples of how you can use this code
 
-  // track the eyes
-  fill(255, 255, 0);
-  circle(person.right_eye.x, person.right_eye.y, 50);
-  circle(person.left_eye.x, person.left_eye.y, 50);
+  // track the nose
+  circle(person.nose.x, person.nose.y, 50);
 
   // we can use the person.confidence value to only show the part if a person is detected
-  fill(0, 255, 255);
-  if (person.confidence > 0) {
-    circle(person.nose.x, person.nose.y, 50);
-  }
+  // fill(0, 255, 255);
+  // if (person.confidence > 0) {
+  //   circle(person.nose.x, person.nose.y, 50);
+  // }
 
   // show all the keypoints - useful for seeing what is available:
-  fill(255, 0, 0);
-  for (let i = 0; i < keypoints.length; i++) {
-    circle(keypoints[i].x, keypoints[i].y, 10);
-  }
+  // fill(255, 0, 0);
+  // for (let i = 0; i < keypoints.length; i++) {
+  //   circle(keypoints[i].x, keypoints[i].y, 10);
+  // }
 }
 
 // these are the available variables...
