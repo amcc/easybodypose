@@ -6,7 +6,7 @@
 // "person": access individual body part positions with the 'person' object.
 // for instance: person.nose.x, person.nose.y
 // see end of file for all available body parts
-
+//
 // "keypoints" you can use the keypoints array to show all body parts by looping over it.
 
 let video;
