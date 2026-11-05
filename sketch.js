@@ -1,13 +1,4 @@
-// easeBodyPose is based on this:
-// https://docs.ml5js.org/#/reference/bodypose
-
-// how to use:
-
-// "person": access individual body part positions with the 'person' object.
-// for instance: person.nose.x, person.nose.y
-// see end of file for all available body parts
-//
-// "keypoints" you can use the keypoints array to show all body parts by looping over it.
+// please look at the README.md for instructions on how to use this code
 
 let video;
 
@@ -27,45 +18,10 @@ function draw() {
   // display the video
   image(video, 0, 0);
 
-  noStroke();
-
-  // examples of how you can use this code
+  fill(0);
 
   // track the nose once a person is detected
   if (person.confidence > 0) {
     circle(noseX, noseY, 50);
   }
 }
-
-// these are the available variables...
-
-// list of all variables
-// person <- object containing the person
-
-// within the person object we have:
-// box
-// confidence
-
-// the body parts within the person object:
-// left_ankle
-// left_ear
-// left_elbow
-// left_eye
-// left_hip
-// left_knee
-// left_shoulder
-// left_wrist
-// nose
-// right_ankle
-// right_ear
-// right_elbow
-// right_eye
-// right_hip
-// right_knee
-// right_shoulder
-// right_wrist
-
-// for instance:
-// person.nose.x
-
-// poses is the root bodyPose object
