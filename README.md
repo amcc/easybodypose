@@ -9,10 +9,11 @@ by typing `person.nose.x` for example to get the x position of your nose.
 To avoid errors if there are no poses detected a `person` variable has been created with pre-filled objects for each body part and the keypoints. If you want to see how this is done open the `easyBodyPose.js` file.
 
 How to use this sketch:
-use the `person` variable, add a body part and access its position
+use the `person` variable or a simple body-part variable to access a position
 
 <pre>
 circle(person.nose.x, person.nose.y, 10)
+circle(noseX, noseY, 10)
 </pre>
 
 ## Documentation
@@ -39,6 +40,45 @@ right_hip
 right_knee
 right_shoulder
 right_wrist
+</pre>
+
+Each body part also has standalone `X` and `Y` variables:
+
+<pre>
+noseX
+noseY
+leftEyeX
+leftEyeY
+rightEyeX
+rightEyeY
+leftEarX
+leftEarY
+rightEarX
+rightEarY
+leftShoulderX
+leftShoulderY
+rightShoulderX
+rightShoulderY
+leftElbowX
+leftElbowY
+rightElbowX
+rightElbowY
+leftWristX
+leftWristY
+rightWristX
+rightWristY
+leftHipX
+leftHipY
+rightHipX
+rightHipY
+leftKneeX
+leftKneeY
+rightKneeX
+rightKneeY
+leftAnkleX
+leftAnkleY
+rightAnkleX
+rightAnkleY
 </pre>
 
 The person object also has these objects:
@@ -79,9 +119,9 @@ Using BodyPose or any machine learning detection code requires knowledge of arra
 
 What if we could access the nose, just like we access the mouse position. In p5js a lot of the complexity of many interactions is abstacted away, for instance mouseX gives us the mouse x position without setting up listeners, or worrying about why it works. EasyBodyPose aims to do just that.
 
-_❓ Why do we access the variables as objects?_
+_❓ Why are there both simple variables and the person object?_
 
-We could have noseX, noseY rather than person.nose.x, person.nose.y - would that be better? Let me know! So far we have avoided this to prevent the easyBodyPose.js file becoming too bloated and making this harder to fork and alter. But it might be nice! Then the body would work just like the mouse.
+Use variables like `noseX` and `noseY` for a quick start, or `person.nose.x` and `person.nose.y` when you want to keep each body's position and confidence together.
 
 _❓ Why do we only track one person?_
 

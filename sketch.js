@@ -33,7 +33,7 @@ function draw() {
 
   // track the nose once a person is detected
   if (person.confidence > 0) {
-    circle(person.nose.x, person.nose.y, 50);
+    circle(noseX, noseY, 50);
   }
 }
 
