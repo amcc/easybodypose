@@ -31,8 +31,10 @@ function draw() {
 
   // examples of how you can use this code
 
-  // track the nose
-  circle(person.nose.x, person.nose.y, 50);
+  // track the nose once a person is detected
+  if (person.confidence > 0) {
+    circle(person.nose.x, person.nose.y, 50);
+  }
 }
 
 // these are the available variables...

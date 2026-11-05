@@ -1,10 +1,4 @@
-// how to use this
-// we have preloaded the bodyPose model
-// run startBodyPose() in your setup
-
-function preload() {
-  bodyPose = ml5.bodyPose("MoveNet");
-}
+// Run startBodyPose() in setup to load the model and start detection.
 
 // define initial values with x and y off the screen
 let initialValues = {
@@ -49,7 +43,9 @@ let person = {
   right_ankle: initialValues,
 };
 
-function startBodyPose(videoOrImage) {
+async function startBodyPose(videoOrImage) {
+  bodyPose = await ml5.bodyPose("MoveNet");
+
   input = videoOrImage;
   if (!input) {
     bodyPoseVideo = createCapture(VIDEO);
