@@ -11,16 +11,15 @@ let initialValues = {
 let score = 0;
 
 // define initial keypoints
-let keypoints = [
+let initialKeypoints = [
   {
-    score: 0,
-    part: "",
-    position: {
-      x: -10000,
-      y: -10000,
-    },
+    x: initialValues.x,
+    y: initialValues.y,
+    confidence: 0,
+    name: "",
   },
 ];
+let keypoints = initialKeypoints;
 
 // define the default person
 let person = {
@@ -108,12 +107,11 @@ function gotPoses(results) {
   if (poses.length > 0) {
     addProps(poses[0]);
   } else {
-    person.confidence = 0;
+    resetPoseValues();
   }
 }
 
 function addProps(obj) {
-  let result = "";
   for (const i in obj) {
     // Object.hasOwn() is used to exclude properties from the object's
     // prototype chain and only show "own properties"
@@ -164,6 +162,20 @@ function addProps(obj) {
   leftAnkleY = person.left_ankle.y;
   rightAnkleX = person.right_ankle.x;
   rightAnkleY = person.right_ankle.y;
+}
+
+function resetPoseValues() {
+  score = 0;
+  keypoints = initialKeypoints;
+
+  for (const part in person) {
+    if (Object.hasOwn(person, part)) {
+      person[part] = initialValues;
+    }
+  }
+  person.confidence = 0;
+
+  addProps({ ...person, score });
 }
 
 function logMessage() {
